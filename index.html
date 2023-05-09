@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <style>
+  
+    input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    }
+    input[type=number] { 
+       -moz-appearance: textfield;
+       appearance: textfield;
+    }
+    *{
+      margin:0;
+      padding:0;
+      font-family:arial
+    }
+    header{
+      display:flex;
+      margin-left:20px
+    }
+    .container{
+      display:flex;
+      flex-direction:column;
+      height:100vh;
+      justify-content:center;
+      align-items:center;
+      background:rgb(100,200,200)
+    }
+    .fundo{
+      background:rgb(200,244,244);
+      width:400px;
+      height:300px;
+      border-radius:20px;
+      position:relative;
+;    }
+    .detalhe{
+      display:;
+    }
+    label h2{
+      color:#b4b4b4;
+      margin:10px 0;
+    }
+    input{
+      padding:8px;
+      width:80px;
+      margin:0 10px 10px 0;
+      font-size:20px;
+      outline:none;
+      border:none;
+      border-radius:10px;
+    }
+    input::placeholder{
+      color:#b4b4b4;
+      
+    }
+    #botao{
+     width:90px;
+     margin-left:239px;
+     padding:9px 14px;
+     background:lightgreen;
+     border:none;
+     border-radius:10px;
+     text-align:center;
+     font-size:16px;
+    }
+    
+    main{
+      margin-left:20px;
+    }
+    main h2{
+      font-size:40px;
+    }
+  </style>
+  
+</head>
+<body class='container'>
+  <div class='fundo'>
+  <header>
+    
+    <label for='dia'>
+      <h2>Day</h2>
+      <input type='text' name='dia' id='day' placeholder='DD' maxlength="2">
+    </label>
+    
+    <label for='mes'>
+      <h2>Month</h2>
+      <input type='text' name='mes' id='month' placeholder='MM' maxlength="2">
+    </label>
+    
+    <label for='ano'>
+      <h2>Year</h2>
+      <input type='text' name='ano' id='year' placeholder='YYYY' maxlength="4">
+    </label>
+    
+    
+    
+  </header>
+  
+  <button id='botao'>Calcular</button>
+  
+  <main>
+    <h2 id='anos'>years</h2>
+    <h2 id='meses'>month</h2>
+    <h2 id='dias'>days</h2>
+  </main>
+    
+  </div>
+  
+  
+  
+  <script>
+    
+    let botao =document.querySelector('#botao');
+    
+    function clicou(){
+      let anos=document.querySelector('#anos')
+      let meses=document.querySelector('#meses')
+      let dias=document.querySelector('#dias')
+      
+      let year=Number(document.querySelector('#year').value)
+      let month=Number(document.querySelector('#month').value)
+      let day=Number(document.querySelector('#day').value)
+      
+      let data = new Date()
+      let anoAtual=data.getFullYear()
+      let mesAtual=data.getMonth() + 1
+      let diaAtual=data.getDate()
+      
+      console.log(diaAtual,anoAtual,mesAtual)
+      
+      if(year<=0 || year>anoAtual || month<=0 ||month>12 ||day<=0 || day>31){
+        window.alert('valores incorretos')
+      }else{
+        
+        if(day>diaAtual){
+          let resulDias=dias.innerHTML=(day-diaAtual) + ' dias'
+        }else{
+           let resulDias=dias.innerHTML=(diaAtual-day) + ' dias'
+        }
+        if(month>mesAtual){
+           let resulMeses=meses.innerHTML=month-mesAtual + ' meses'
+        }else{
+          let resulMeses=meses.innerHTML=mesAtual-month + ' meses'
+        }
+        let resulAnos=anos.innerHTML=anoAtual - year -1 + ' anos'
+        
+      }
+    }
+    
+    botao.addEventListener('click',clicou)
+    
+  </script>
+</body>
+</html>
+
+
