@@ -1,6 +1,5 @@
 # Contador de Idades
 
-![Contador de Idades](screenshot.png)
 
 Bem-vindo ao Contador de Idades! Este é um projeto simples que permite calcular a sua idade com base na data de nascimento inserida.
 
@@ -12,3 +11,5 @@ Bem-vindo ao Contador de Idades! Este é um projeto simples que permite calcular
 
 3. O resultado será exibido, mostrando a sua idade com base na data de nascimento fornecida.
 
+
+![Contador de Idades](./image/Captura%20de%20tela%202023-08-29%20152452.png)
